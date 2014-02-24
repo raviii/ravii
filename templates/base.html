@@ -1,5 +1,5 @@
 <html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head>
-
+{% load staticfiles %}
 	<!-- Basics -->
 	
 	<meta charset="utf-8">
@@ -13,31 +13,25 @@
 
 	<!-- CSS -->
 	
-	<link rel="stylesheet" href="{{ MEDIA_ROOT }}/css/my.css">
-	<link rel="stylesheet" href="{{ MEDIA_ROOT }}/static/css/animate.css">
-	<link rel="stylesheet" href="{{ MEDIA_ROOT }}/static/css/styles.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/my.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/animate.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
 	
 </head>
 
 	<!-- Main HTML -->
 	
 <body>
-	
 	<!-- Begin Page Content -->
 	
-	<div id="container">
-	
-		<h1>App.</h1>
+	<div class="welcome" id="container">	
+		<h1>Welcome</h1>
 		
-		<p>
-		This amazing application will change your life. Subscribe to be notified when it's available, or follow us on <a href="#">Twitter.</a>
-		</p>
 		
 		<div id="subscribe">
 		
-		<input type="email" placeholder="email address" required="required">
+<!--		<input type="email" placeholder="email address" required="required"> -->
 		
-		<input type="submit" value="submit">
 		
 		</div>
 		
@@ -55,4 +49,8 @@
 	
 	
 		
-	</body></html>
+	</body>
+<script type='text/javascript'>
+
+</script>
+</html>

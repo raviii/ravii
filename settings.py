@@ -47,8 +47,15 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'gallery.items',
+    'django.contrib.staticfiles',
 )
 
+STATICFILES_DIRS = (os.path.join(PWD, "static"),)
+STATICFILES_FINDERS = (
+   'django.contrib.staticfiles.finders.FileSystemFinder',
+   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
 
 # Root URL prefix - e.g. '/gallery/' would be for non-top-level domain
 ROOT_URL = '/'
@@ -56,8 +63,12 @@ LOGIN_URL = ROOT_URL + 'login/'
 MEDIA_URL = ROOT_URL + 'media/'
 ADMIN_MEDIA_PREFIX = '/media/admin/'
 MEDIA_ROOT = PWD + '/static'
+STATIC_URL= '/static/'
+STATIC_ROOT= '/static'
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'gallery.context_processors.root_url_processor',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.static',
     'django.contrib.auth.context_processors.auth',
+    'gallery.context_processors.root_url_processor',
 )
 ROOT_URLCONF = 'gallery.urls'

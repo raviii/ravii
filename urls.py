@@ -8,3 +8,4 @@ from django.views.generic import TemplateView
 from gallery.views import StaticView
 
 urlpatterns = patterns('home',(r'^$', TemplateView.as_view(template_name="index.html")))
+# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
